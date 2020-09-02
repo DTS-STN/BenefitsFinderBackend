@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rules",
+  "info": {
+    "name": "Rules"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "rule_definition": {
+      "type": "json",
+      "required": true
+    },
+    "benefit_name": {
+      "type": "string",
+      "required": true,
+      "minLength": 1
+    },
+    "benefit": {
+      "model": "benefits",
+      "via": "rules"
+    }
+  }
+}
