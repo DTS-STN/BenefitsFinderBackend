@@ -16,8 +16,8 @@
       "type": "string"
     },
     "benefit": {
-      "model": "benefits",
-      "via": "benefit_features"
+      "via": "benefit_features",
+      "model": "benefits"
     }
   }
 }

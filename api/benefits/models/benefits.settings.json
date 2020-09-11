@@ -10,18 +10,39 @@
   },
   "attributes": {
     "title_en": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "title_fr": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "benefit_features": {
-      "via": "benefit",
-      "collection": "benefit-features"
+      "collection": "benefit-features",
+      "via": "benefit"
     },
-    "rules": {
-      "via": "benefit",
-      "collection": "rules"
+    "description_en": {
+      "type": "richtext"
+    },
+    "description_fr": {
+      "type": "richtext"
+    },
+    "benefit_id": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "info_link_en": {
+      "type": "string"
+    },
+    "info_link_fr": {
+      "type": "string"
+    },
+    "info_link_text_en": {
+      "type": "string"
+    },
+    "info_link_text_fr": {
+      "type": "string"
     }
   }
 }
