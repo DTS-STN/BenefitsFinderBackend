@@ -1,0 +1,39 @@
+version: "3"
+
+services:
+  api:
+    restart: unless-stopped
+    depends_on:
+      - postgres
+    build:
+      context: .
+      dockerfile: Api.Dockerfile
+    ports:
+      - 1337:1337
+    environment:
+      - DATABASE_CLIENT=postgres
+      - DATABASE_HOST=postgres
+      - DATABASE_PORT=5432
+      - DATABASE_NAME=strapi
+      - DATABASE_USERNAME=strapi
+      - DATABASE_PASSWORD=strapi
+      - STRAPI_ADMIN_JWT_SECRET=someJWTSecret
+  admin:
+    depends_on:
+      - api
+    build:
+      context: .
+      dockerfile: Admin.Dockerfile
+    ports:
+      - 8080:80
+    environment:
+      - STRAPI_API_BACKEND_URL=http://localhost:1337
+  postgres:
+    image: postgres
+    restart: always
+    volumes:
+      - ./db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: strapi
+      POSTGRES_PASSWORD: strapi
+      POSTGRES_DB: strapi
