@@ -18,6 +18,7 @@ services:
       - DATABASE_USERNAME=strapi
       - DATABASE_PASSWORD=strapi
       - STRAPI_ADMIN_JWT_SECRET=someJWTSecret
+      - STRAPI_API_BACKEND_URL=/api
   admin:
     depends_on:
       - api
@@ -27,7 +28,7 @@ services:
     ports:
       - 8080:80
     environment:
-      - STRAPI_API_BACKEND_URL=http://localhost:1337
+      - STRAPI_API_BACKEND_URL=http://localhost:1337/api
   postgres:
     image: postgres
     restart: always
