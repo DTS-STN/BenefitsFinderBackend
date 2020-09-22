@@ -1,7 +1,9 @@
 FROM node:lts-alpine
 
-ENV NODE_ENV 'production'
-ENV STRAPI_API_BACKEND_URL 'http://localhost:1337'
+ARG NODE_ENV='production'
+ARG STRAPI_API_BACKEND_URL='http://localhost:1337'
+ENV NODE_ENV $NODE_ENV
+ENV STRAPI_API_BACKEND_URL $STRAPI_API_BACKEND_URL
 
 COPY ./ ./
 
