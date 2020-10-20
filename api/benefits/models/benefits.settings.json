@@ -15,6 +15,9 @@
     "title_fr": {
       "type": "string"
     },
+    "title_es": {
+      "type": "string"
+    },
     "benefit_features": {
       "via": "benefit",
       "collection": "benefit-features"
