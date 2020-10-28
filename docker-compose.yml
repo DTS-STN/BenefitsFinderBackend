@@ -34,6 +34,8 @@ services:
     restart: always
     volumes:
       - ./db:/var/lib/postgresql/data
+    ports:
+      - 5433:5432
     environment:
       POSTGRES_USER: strapi
       POSTGRES_PASSWORD: strapi
