@@ -31,7 +31,7 @@ services:
       - STRAPI_API_BACKEND_URL=http://localhost:1337/api
   postgres:
     image: postgres
-    restart: always
+    restart: always 
     volumes:
       - ./db:/var/lib/postgresql/data
     ports:

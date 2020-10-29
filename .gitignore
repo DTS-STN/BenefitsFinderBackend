@@ -61,6 +61,7 @@ $RECYCLE.BIN/
 *.pid
 
 
+
 ############################
 # Logs and databases
 ############################
@@ -70,6 +71,7 @@ $RECYCLE.BIN/
 *.sql
 *.sqlite
 *.sqlite3
+db/**
 
 
 ############################
@@ -94,6 +96,7 @@ logs
 results
 node_modules
 .node_history
+package-lock.json
 
 
 ############################
