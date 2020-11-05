@@ -14,10 +14,6 @@
     },
     "feature_name_fr": {
       "type": "string"
-    },
-    "benefit": {
-      "model": "benefits",
-      "via": "benefit_features"
     }
   }
 }

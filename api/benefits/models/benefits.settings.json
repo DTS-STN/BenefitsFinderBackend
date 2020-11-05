@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "benefits",
+  "collectionName": "benefit",
   "info": {
-    "name": "Benefits"
+    "name": "Benefit"
   },
   "options": {
     "increments": true,
@@ -15,13 +15,16 @@
     "title_fr": {
       "type": "string"
     },
-    "benefit_features": {
-      "via": "benefit",
-      "collection": "benefit-features"
+    "questions": {
+      "via": "benefits",
+      "collection": "question",
+      "dominant": true
     },
-    "rules": {
-      "via": "benefit",
-      "collection": "rules"
+    "description_en": {
+      "type": "text"
+    },
+    "description_fr": {
+      "type": "text"
     }
   }
 }

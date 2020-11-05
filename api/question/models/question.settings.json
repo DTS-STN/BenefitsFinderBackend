@@ -29,34 +29,15 @@
       ],
       "required": true
     },
-    "description_en": {
-      "type": "richtext",
-      "required": false
+    "boolean": {
+      "type": "boolean"
     },
-    "description_fr": {
-      "type": "richtext"
+    "benefits": {
+      "collection": "benefits",
+      "via": "questions"
     },
-    "next_questions": {
-      "collection": "question",
-      "via": "previous_question"
-    },
-    "previous_question": {
-      "model": "question",
-      "via": "next_questions"
-    },
-    "display_name_en": {
-      "type": "string"
-    },
-    "display_name_fr": {
-      "type": "string"
-    },
-    "options": {
-      "via": "questions",
-      "collection": "options"
-    },
-    "option_question_followings": {
-      "via": "question_following_option",
-      "collection": "options"
+    "date": {
+      "type": "date"
     }
   }
 }
