@@ -1,0 +1,54 @@
+image:
+  repository: mtscontainers.azurecr.io/ebf-strapi-api
+{{ if or (eq .Environment.Name "prod-blue") (eq .Environment.Name "prod-green") (eq .Environment.Name "dev") }}
+  tag: "{{ requiredEnv "DOCKER_TAG" }}"
+{{ else }}
+  tag: latest
+{{ end }}
+  pullPolicy: Always
+
+ingress:
+  enabled: true
+  hosts:
+  {{ if or (eq .Environment.Name "prod-blue") (eq .Environment.Name "prod-green") }}
+    - ebf-strapi-api.{{ requiredEnv "BASE_DOMAIN" }}
+    - ebf-strapi-api.{{ .Environment.Name }}.{{ requiredEnv "BASE_DOMAIN" }}
+  {{ else }}
+    - ebf-strapi-api-{{ .Environment.Name }}.{{ requiredEnv "BASE_DOMAIN_DEV" }}
+  {{ end }}
+
+resources:
+  requests:
+    cpu: 200m
+    memory: 512Mi
+
+livenessProbe:
+  enabled: true
+  delay: 60
+  path: {{ requiredEnv "STRAPI_API_BACKEND_URL" }}
+
+readinessProbe:
+  enabled: true
+  delay: 30
+  path: {{ requiredEnv "STRAPI_API_BACKEND_URL" }}
+
+port: 80
+
+extraEnv:
+  - name: DATABASE_CLIENT
+    value: postgres
+  - name: DATABASE_HOST
+    value: {{ requiredEnv "STRAPI_DATABASE_HOST" }}
+  - name: DATABASE_PORT
+    value: {{ requiredEnv "STRAPI_DATABASE_PORT" }}
+  - name: DATABASE_NAME
+    value: {{ requiredEnv "STRAPI_DATABASE_NAME" }}
+  - name: DATABASE_USERNAME
+    value: {{ requiredEnv "STRAPI_DATABASE_USERNAME" }}
+  - name: DATABASE_PASSWORD
+    value: {{ requiredEnv "STRAPI_DATABASE_PASSWORD" }}
+  - name: STRAPI_ADMIN_JWT_SECRET
+    value: {{ requiredEnv "STRAPI_ADMIN_JWT_SECRET" }}
+  - name: STRAPI_API_BACKEND_URL
+    value: {{ requiredEnv "STRAPI_API_BACKEND_URL" }}
+

@@ -1,5 +1,0 @@
-
-networkPolicy:
-  enabled: false
-  egressPodMatchLabels:
-    app: postgresql
