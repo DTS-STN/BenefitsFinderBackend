@@ -29,15 +29,12 @@
       ],
       "required": true
     },
-    "boolean": {
-      "type": "boolean"
+    "options": {
+      "collection": "options",
+      "via": "question"
     },
-    "benefits": {
-      "collection": "benefits",
-      "via": "questions"
-    },
-    "date": {
-      "type": "date"
+    "openfisca_variable": {
+      "type": "json"
     }
   }
 }

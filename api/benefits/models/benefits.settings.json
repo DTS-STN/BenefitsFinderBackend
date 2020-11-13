@@ -15,16 +15,14 @@
     "title_fr": {
       "type": "string"
     },
-    "questions": {
-      "via": "benefits",
-      "collection": "question",
-      "dominant": true
-    },
     "description_en": {
       "type": "text"
     },
     "description_fr": {
       "type": "text"
+    },
+    "openfisca_variable": {
+      "type": "json"
     }
   }
 }
