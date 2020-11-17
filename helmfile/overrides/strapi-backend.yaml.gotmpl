@@ -14,7 +14,7 @@ ingress:
     - ebf-strapi-api.{{ requiredEnv "BASE_DOMAIN" }}
     - ebf-strapi-api.{{ .Environment.Name }}.{{ requiredEnv "BASE_DOMAIN" }}
   {{ else }}
-    - ebf-strapi-api-{{ .Environment.Name }}.{{ requiredEnv "BASE_DOMAIN_DEV" }}
+    - ebf-strapi-api.{{ requiredEnv "BASE_DOMAIN_DEV" }}
   {{ end }}
 
 resources:
@@ -23,12 +23,12 @@ resources:
     memory: 512Mi
 
 livenessProbe:
-  enabled: true
+  enabled: false
   delay: 60
   path: {{ requiredEnv "STRAPI_API_BACKEND_URL" }}
 
 readinessProbe:
-  enabled: true
+  enabled: false
   delay: 30
   path: {{ requiredEnv "STRAPI_API_BACKEND_URL" }}
 
@@ -36,19 +36,19 @@ port: 80
 
 extraEnv:
   - name: DATABASE_CLIENT
-    value: postgres
+    value: "postgres"
   - name: DATABASE_HOST
-    value: {{ requiredEnv "STRAPI_DATABASE_HOST" }}
+    value: {{ requiredEnv "STRAPI_DATABASE_HOST" | quote }}
   - name: DATABASE_PORT
-    value: {{ requiredEnv "STRAPI_DATABASE_PORT" }}
+    value: {{ requiredEnv "STRAPI_DATABASE_PORT" | quote }}
   - name: DATABASE_NAME
-    value: {{ requiredEnv "STRAPI_DATABASE_NAME" }}
+    value: {{ requiredEnv "STRAPI_DATABASE_NAME" | quote }}
   - name: DATABASE_USERNAME
-    value: {{ requiredEnv "STRAPI_DATABASE_USERNAME" }}
+    value: {{ requiredEnv "STRAPI_DATABASE_USERNAME" | quote }}
   - name: DATABASE_PASSWORD
-    value: {{ requiredEnv "STRAPI_DATABASE_PASSWORD" }}
+    value: {{ requiredEnv "STRAPI_DATABASE_PASSWORD" | quote }}
   - name: STRAPI_ADMIN_JWT_SECRET
-    value: {{ requiredEnv "STRAPI_ADMIN_JWT_SECRET" }}
+    value: {{ requiredEnv "STRAPI_ADMIN_JWT_SECRET" | quote }}
   - name: STRAPI_API_BACKEND_URL
-    value: {{ requiredEnv "STRAPI_API_BACKEND_URL" }}
+    value: {{ requiredEnv "STRAPI_API_BACKEND_URL" | quote }}
 

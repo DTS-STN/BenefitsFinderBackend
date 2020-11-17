@@ -14,7 +14,7 @@ ingress:
     - ebf-strapi.{{ requiredEnv "BASE_DOMAIN" }}
     - ebf-strapi.{{ .Environment.Name }}.{{ requiredEnv "BASE_DOMAIN" }}
   {{ else }}
-    - ebf-strapi-{{ .Environment.Name }}.{{ requiredEnv "BASE_DOMAIN_DEV" }}
+    - ebf-strapi.{{ requiredEnv "BASE_DOMAIN_DEV" }}
   {{ end }}
 
 resources:
@@ -23,13 +23,13 @@ resources:
     memory: 512Mi
 
 livenessProbe:
-  enabled: true
+  enabled: false
   delay: 60
-  path: {{ requiredEnv "STRAPI_API_BACKEND_URL" }}
+  path: "{{ requiredEnv "STRAPI_API_BACKEND_URL" }}"
 
 readinessProbe:
-  enabled: true
+  enabled: false
   delay: 30
-  path: {{ requiredEnv "STRAPI_API_BACKEND_URL" }}
+  path: "{{ requiredEnv "STRAPI_API_BACKEND_URL" }}"
 
 port: 80
