@@ -14,7 +14,7 @@ ingress:
     - ebf-strapi.{{ requiredEnv "BASE_DOMAIN" }}
     - ebf-strapi.{{ .Environment.Name }}.{{ requiredEnv "BASE_DOMAIN" }}
   {{ else }}
-    - ebf-strapi.{{ requiredEnv "BASE_DOMAIN_DEV" }}
+    - ebf-strapi-{{ .Environment.Name }}.{{ requiredEnv "BASE_DOMAIN_DEV" }}
   {{ end }}
 
 resources:

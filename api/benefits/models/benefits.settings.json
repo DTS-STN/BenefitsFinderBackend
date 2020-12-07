@@ -15,16 +15,33 @@
     "title_fr": {
       "type": "string"
     },
-    "title_es": {
+    "benefit_key": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "benefit_description_en": {
+      "type": "text"
+    },
+    "benefit_description_fr": {
+      "type": "text"
+    },
+    "benefit_content_en": {
+      "type": "richtext"
+    },
+    "benefit_content_fr": {
+      "type": "richtext"
+    },
+    "benefit_link_en": {
       "type": "string"
     },
-    "benefit_features": {
-      "via": "benefit",
-      "collection": "benefit-features"
+    "benefit_link_fr": {
+      "type": "string"
     },
-    "rules": {
-      "via": "benefit",
-      "collection": "rules"
+    "benefit_tags": {
+      "collection": "benefit-tags",
+      "via": "benefits",
+      "dominant": true
     }
   }
 }
