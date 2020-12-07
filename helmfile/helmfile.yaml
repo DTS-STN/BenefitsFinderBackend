@@ -18,38 +18,38 @@ environments:
 
 
 releases:
-  - name: ebf-cms-api
+  - name: ebf-cms-api-{{ .Environment.Name }}
     chart: ../helm/charts/strapi-backend
     version: 0.0.1
     values:
       - overrides/strapi-backend.yaml.gotmpl
     labels:
       category: dts
-      app: ebf-strapi
+      app: ebf-strapi-{{ .Environment.Name }}
       tier: server
-    namespace: ebf-cms-api
+    namespace: ebf-cms-api-{{ .Environment.Name }}
     installed: true
     wait: true
     force: false
-  - name: ebf-cms
+  - name: ebf-cms-{{ .Environment.Name }}
     chart: ../helm/charts/strapi-admin
     values:
       - overrides/strapi-admin.yaml.gotmpl
     labels:
       category: dts
-      app: ebf-strapi
+      app: ebf-strapi-{{ .Environment.Name }}
       tier: server
     installed: true
     wait: true
     force: false
-  - name: ebf-cms-pg
+  - name: ebf-cms-pg-{{ .Environment.Name }}
     chart: bitnami/postgresql
-    namespace: ebf-cms-api
+    namespace: ebf-cms-api-{{ .Environment.Name }}
     values:
       - overrides/strapi-psql.yaml.gotmpl
     labels:
       category: dts
-      app: ebf-strapi
+      app: ebf-strapi-{{ .Environment.Name }}
       tier: database
     installed: true
     wait: false
