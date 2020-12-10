@@ -33,8 +33,14 @@
       "type": "string"
     },
     "options": {
-      "via": "questions",
-      "collection": "options"
+      "collection": "options",
+      "via": "questions"
+    },
+    "description_en": {
+      "type": "text"
+    },
+    "description_fr": {
+      "type": "text"
     }
   }
 }
