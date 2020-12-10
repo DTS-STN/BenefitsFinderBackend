@@ -16,6 +16,10 @@ environments:
   prod-green:
   omar-strapi-dev:
 
+helmDefaults:
+  timeout: 900
+  wait: true
+
 
 releases:
   - name: ebf-cms-api-{{ .Environment.Name }}
@@ -54,5 +58,6 @@ releases:
     installed: true
     wait: false
     force: false
+
 
 
