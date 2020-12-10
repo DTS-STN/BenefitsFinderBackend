@@ -1,5 +1,7 @@
 FROM node:lts-alpine
 
+RUN apk add --no-cache --virtual python make g++ pkgconf libsecret-dev
+
 ARG NODE_ENV='production'
 ARG STRAPI_API_BACKEND_URL='http://localhost:1337'
 ENV NODE_ENV $NODE_ENV
