@@ -2,7 +2,7 @@
   "kind": "collectionType",
   "collectionName": "options",
   "info": {
-    "name": "Options"
+    "name": "Option"
   },
   "options": {
     "increments": true,
@@ -19,28 +19,13 @@
       "required": true,
       "minLength": 1
     },
-    "description_en": {
-      "type": "richtext"
-    },
-    "description_fr": {
-      "type": "richtext"
-    },
-    "display_name_en": {
-      "type": "string",
-      "minLength": 1
-    },
-    "display_name_fr": {
-      "type": "string",
-      "minLength": 1
-    },
     "questions": {
       "collection": "question",
       "via": "options",
       "dominant": true
     },
-    "question_following_option": {
-      "model": "question",
-      "via": "option_question_followings"
+    "variable_name": {
+      "type": "string"
     }
   }
 }

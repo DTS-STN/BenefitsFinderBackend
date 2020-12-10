@@ -29,33 +29,11 @@
       ],
       "required": true
     },
-    "description_en": {
-      "type": "richtext",
-      "required": false
-    },
-    "description_fr": {
-      "type": "richtext"
-    },
-    "next_questions": {
-      "collection": "question",
-      "via": "previous_question"
-    },
-    "previous_question": {
-      "model": "question",
-      "via": "next_questions"
-    },
-    "display_name_en": {
-      "type": "string"
-    },
-    "display_name_fr": {
+    "variable_name": {
       "type": "string"
     },
     "options": {
       "via": "questions",
-      "collection": "options"
-    },
-    "option_question_followings": {
-      "via": "question_following_option",
       "collection": "options"
     }
   }
