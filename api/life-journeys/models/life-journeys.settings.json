@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "life_journeys",
+  "info": {
+    "name": "Life Journeys"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title_en": {
+      "type": "string"
+    },
+    "title_fr": {
+      "type": "string"
+    },
+    "description_en": {
+      "type": "text"
+    },
+    "description_fr": {
+      "type": "text"
+    },
+    "content_en": {
+      "type": "richtext"
+    },
+    "content_fr": {
+      "type": "richtext"
+    },
+    "related_benefits": {
+      "collection": "benefits",
+      "via": "life_journeys",
+      "dominant": true
+    }
+  }
+}
