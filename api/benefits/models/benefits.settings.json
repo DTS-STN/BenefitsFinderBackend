@@ -42,6 +42,10 @@
       "collection": "benefit-tags",
       "via": "benefits",
       "dominant": true
+    },
+    "life_journeys": {
+      "via": "related_benefits",
+      "collection": "life-journeys"
     }
   }
 }
