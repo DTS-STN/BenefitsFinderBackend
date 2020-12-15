@@ -31,6 +31,9 @@
       "collection": "benefits",
       "via": "life_journeys",
       "dominant": true
+    },
+    "life_journey_key": {
+      "type": "string"
     }
   }
 }
