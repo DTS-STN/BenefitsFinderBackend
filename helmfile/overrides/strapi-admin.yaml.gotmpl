@@ -1,5 +1,5 @@
 image:
-  repository: mtscontainers.azurecr.io/ebf-strapi-admin
+  repository: mtscontainers.azurecr.io/cms-bakeoff-strapi-admin
 {{ if or (eq .Environment.Name "prod-blue") (eq .Environment.Name "prod-green") (eq .Environment.Name "dev") }}
   tag: "{{ requiredEnv "DOCKER_TAG" }}"
 {{ else }}
