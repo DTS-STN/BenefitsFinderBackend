@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pages",
+  "info": {
+    "name": "Pages"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Title_EN": {
+      "type": "string"
+    },
+    "Title_FR": {
+      "type": "string"
+    },
+    "Content_EN": {
+      "type": "richtext"
+    },
+    "Content_FR": {
+      "type": "richtext"
+    },
+    "PreviewImage": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "PreviewText": {
+      "type": "text"
+    }
+  }
+}

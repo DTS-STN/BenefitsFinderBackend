@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tags",
+  "info": {
+    "name": "Tags"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Tag_EN": {
+      "type": "string"
+    },
+    "Tag_FR": {
+      "type": "string"
+    },
+    "TagPreviewImage": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "TagDescription": {
+      "type": "text"
+    },
+    "posts": {
+      "collection": "posts",
+      "via": "tags",
+      "dominant": true
+    }
+  }
+}
