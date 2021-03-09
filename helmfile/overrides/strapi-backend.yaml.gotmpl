@@ -11,10 +11,10 @@ ingress:
   enabled: true
   hosts:
   {{ if or (eq .Environment.Name "prod-blue") (eq .Environment.Name "prod-green") }}
-    - ebf-strapi-api.{{ requiredEnv "BASE_DOMAIN" }}
-    - ebf-strapi-api.{{ .Environment.Name }}.{{ requiredEnv "BASE_DOMAIN" }}
+    - cms-bakeoff-strapi-api.{{ requiredEnv "BASE_DOMAIN" }}
+    - cms-bakeoff-strapi-api.{{ .Environment.Name }}.{{ requiredEnv "BASE_DOMAIN" }}
   {{ else }}
-    - ebf-strapi-api-{{ .Environment.Name }}.{{ requiredEnv "BASE_DOMAIN_DEV" }}
+    - cms-bakeoff-strapi-api-{{ .Environment.Name }}.{{ requiredEnv "BASE_DOMAIN_DEV" }}
   {{ end }}
 
 resources:
