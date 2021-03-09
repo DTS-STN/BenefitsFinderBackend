@@ -34,6 +34,11 @@
     },
     "PreviewText": {
       "type": "text"
+    },
+    "UniqueID": {
+      "type": "string",
+      "unique": true,
+      "required": true
     }
   }
 }

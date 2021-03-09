@@ -30,8 +30,8 @@
       "type": "text"
     },
     "posts": {
-      "collection": "posts",
       "via": "tags",
+      "collection": "posts",
       "dominant": true
     }
   }

@@ -36,8 +36,13 @@
       "type": "text"
     },
     "tags": {
-      "via": "posts",
-      "collection": "tags"
+      "collection": "tags",
+      "via": "posts"
+    },
+    "UniqueID": {
+      "type": "string",
+      "required": true,
+      "unique": true
     }
   }
 }
