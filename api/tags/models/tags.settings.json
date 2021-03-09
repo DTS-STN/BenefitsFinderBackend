@@ -30,9 +30,14 @@
       "type": "text"
     },
     "posts": {
-      "via": "tags",
       "collection": "posts",
+      "via": "tags",
       "dominant": true
+    },
+    "UniqueID": {
+      "type": "string",
+      "required": true,
+      "unique": true
     }
   }
 }

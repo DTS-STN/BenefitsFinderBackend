@@ -36,8 +36,8 @@
       "type": "text"
     },
     "tags": {
-      "collection": "tags",
-      "via": "posts"
+      "via": "posts",
+      "collection": "tags"
     },
     "UniqueID": {
       "type": "string",
