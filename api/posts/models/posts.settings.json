@@ -21,7 +21,7 @@
     "Content_FR": {
       "type": "richtext"
     },
-    "PreviewImage": {
+    "PreviewImage_EN": {
       "model": "file",
       "via": "related",
       "allowedTypes": [
@@ -32,17 +32,36 @@
       "plugin": "upload",
       "required": false
     },
-    "PreviewText": {
+    "PreviewText_EN": {
       "type": "text"
     },
     "tags": {
       "via": "posts",
       "collection": "tags"
     },
-    "UniqueID": {
+    "PostID_EN": {
       "type": "string",
       "required": true,
       "unique": true
+    },
+    "PostID_FR": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "PreviewImage_FR": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "PreviewText_FR": {
+      "type": "text"
     }
   }
 }

@@ -21,7 +21,7 @@
     "Content_FR": {
       "type": "richtext"
     },
-    "PreviewImage": {
+    "PreviewImage_EN": {
       "model": "file",
       "via": "related",
       "allowedTypes": [
@@ -32,13 +32,32 @@
       "plugin": "upload",
       "required": false
     },
-    "PreviewText": {
+    "PreviewText_EN": {
       "type": "text"
     },
-    "UniqueID": {
+    "PageID_EN": {
       "type": "string",
       "unique": true,
       "required": true
+    },
+    "PageID_FR": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "PreviewImage_FR": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "PreviewText_FR": {
+      "type": "text"
     }
   }
 }
