@@ -2,11 +2,13 @@
   "kind": "collectionType",
   "collectionName": "posts",
   "info": {
-    "name": "Posts"
+    "name": "Posts",
+    "description": ""
   },
   "options": {
     "increments": true,
-    "timestamps": true
+    "timestamps": true,
+    "draftAndPublish": true
   },
   "attributes": {
     "Title_EN": {

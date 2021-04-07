@@ -2,11 +2,13 @@
   "kind": "collectionType",
   "collectionName": "tags",
   "info": {
-    "name": "Tags"
+    "name": "Tags",
+    "description": ""
   },
   "options": {
     "increments": true,
-    "timestamps": true
+    "timestamps": true,
+    "draftAndPublish": true
   },
   "attributes": {
     "Tag_EN": {
